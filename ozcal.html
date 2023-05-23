@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            text-align: center;
+            padding-top: 200px;
+        }
+        h1,h2,h3,h4,p{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function cal( x ){
+            let res = 30/(3.141592* Math.pow(x/2,2));
+            document.getElementById("result").innerHTML = res;
+        }
+    </script>
+    <h1>OZ Calculator</h1>
+    <form>
+        <p>시작점(지름,cm) : <input type="text" name="wlfma" id="wlfma">
+        <input type="button" value="계산" onclick="cal(document.getElementById('wlfma').value)"/>
+
+        <h3>1oz 높이는  <span id="result" style="color:red;"></span> cm입니다.</h3>
+    </form>
+    <p style="color: gray;">1oz는 약 30ml 입니다</p>
+    <p style="color: gray;"> H = 30 / 3.14 * (x/2)^2  </p>
+    
+    
+</body>
+</html>
