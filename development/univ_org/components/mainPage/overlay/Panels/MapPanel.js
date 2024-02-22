@@ -1,18 +1,25 @@
-/* 폴더가 꼬였지만 map의 하위 컴포넌트입니다 */
-
 import {React,useState} from 'react';
 
-import {View,StyleSheet,Text} from 'react-native';
+import {View,StyleSheet,Text, TouchableOpacity} from 'react-native';
 import Pbtn from './pBtn';
 
 const MapPanel = props => {
+
+    const onPressMyloc = () =>{
+        props.mapInfo['ref'].current.animateCamera({
+            center: {
+              latitude: 37.3751106262207,
+              longitude: 126.63219451904297,
+            },
+          })
+    }
   return( 
     <>
 
     <View style={styles.pDownPanel}>
         <View style={styles.pBodies}>
             <View style={styles.pBtns}>
-                <Pbtn btnColor="white" image={require('./assets/pBtn/myloc.png')} />
+                <Pbtn btnColor="white" image={require('./assets/pBtn/myloc.png')} func={onPressMyloc}/>
             </View>
         </View>
     </View>

@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
       height: 3,
       backgroundColor: '#D8D8D8',
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: 'row'
     },
     flexItem: {
         flex: 1,

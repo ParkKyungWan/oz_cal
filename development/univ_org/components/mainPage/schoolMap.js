@@ -3,22 +3,15 @@ import { StyleSheet,Image } from 'react-native';
 import { PROVIDER_GOOGLE } from 'react-native-maps';
 import MapView, {Marker} from 'react-native-maps';
 
-import MapPanel from './overlay/Panels/MapPanel';
 
 /*
 맵뷰 레퍼런스
 https://docs.expo.dev/versions/latest/sdk/map-view/
 */
 
-function SchoolMap(){
+const SchoolMap = props =>{
 
-    const [mapRegion, setmapRegion] = useState({
-      latitude: 37.3751106262207,
-      longitude: 126.63219451904297,
-      latitudeDelta: 0.0028,
-      longitudeDelta: 0.0028,
-      });
-
+    
     const [mapStyle, setmapStyle] = useState([
         {
             "elementType": "labels",
@@ -123,9 +116,8 @@ function SchoolMap(){
     ])
     
 
-    const mapViewRef = useRef(null);
     const reloadmapView = ()=>{
-      mapViewRef.current.animateCamera({
+      props.mapRef.current.animateCamera({
         center: {
           latitude: 37.3751106262207,
           longitude: 126.63219451904297,
@@ -148,13 +140,15 @@ function SchoolMap(){
   }
     return( 
       <>
+
       <MapView
-        ref={ mapViewRef }
+        ref={ props.mapRef }
         provider={PROVIDER_GOOGLE}r
         customMapStyle={mapStyle}
         style={{ alignSelf: 'stretch', height: '100%' }}
-        region={mapRegion}
+        region={props.mapRegion}
       >
+
         <Marker
           coordinate={{latitude: 37.3751106262207, longitude: 126.63219451904297}}
         >
@@ -164,7 +158,6 @@ function SchoolMap(){
         </Marker>
       </MapView>
       
-      <MapPanel moveTomyLoc={moveTomyLoc}/>
       </>
     
     );

@@ -1,20 +1,21 @@
 import React from 'react';
 
-import {View,StyleSheet,Text,Image} from 'react-native';
+import {View,StyleSheet,Text,Image, TouchableOpacity} from 'react-native';
 
 Pbtn = props => {
 
   return( 
     <>
+    <TouchableOpacity activeOpacity={0.5} onPress={()=>{props.func()}}>
     <View style={[ styles.pBtn, styles.pDropShadow, {backgroundColor: props.btnColor} ]}>
         <View style={{display:'flex',flexDirection:'row',justifyContent:'center'}}>
-
             <Image 
                 style={styles.pBtnInnerImage}
                 source={props.image}
             />
         </View>
     </View>
+    </TouchableOpacity>
     </>
     );
   
