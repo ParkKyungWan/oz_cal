@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "univPrj",
+    "slug": "univPrj",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier" : "com.univPrj.present",
+      "supportsTablet": true,
+      "config" : {
+        "googleMapsApiKey" : "AIzaSyBDXBpRsoXpJ5_dUjQPFQDX8Hw_DezxPpY"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
