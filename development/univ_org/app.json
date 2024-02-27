@@ -29,6 +29,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "$(PRODUCT_NAME) : 위치 정보 이용을 허락해주세요!"
+        }
+      ]
+    ]
   }
 }

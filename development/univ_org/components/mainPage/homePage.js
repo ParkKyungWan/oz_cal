@@ -7,6 +7,15 @@ import FireMan from './overlay/fireMan';
 import ShoutingPanel from './overlay/Panels/shoutingPanel';
 import MapPanel from './overlay/Panels/MapPanel';
 
+
+//반복실행함수
+import useInterval from './util/useInterval';
+
+//토스트메세지 라이브러리
+import Toast from 'react-native-toast-message';
+import { toastConfig } from './ToastConfig';
+
+
 function HomePage() {
 
   const [mapRegion, setmapRegion] = useState({
@@ -24,6 +33,15 @@ function HomePage() {
     'ref': mapViewRef,
 
   }
+  useInterval(() => {
+    Toast.show({
+      type: 'FiremanToast',
+      text1: '모든 친구에게 ',
+      text2: '위치를 공유하고 있어요'
+    });
+    
+  }, 3000);
+
   return( 
     <>
     <View style={styles.body}>
@@ -33,6 +51,13 @@ function HomePage() {
     <FireMan/>
     <MapPanel mapInfo={mapInfo} />
     <NavDisplayBar loc={1} />
+
+    <Toast
+      config={toastConfig}
+      position='bottom'
+      visibilityTime={2500}
+      swipeable={false}
+      bottomOffset={0}/>
     </>
     );
   

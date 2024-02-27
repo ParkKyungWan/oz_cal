@@ -11,7 +11,9 @@ https://docs.expo.dev/versions/latest/sdk/map-view/
 
 const SchoolMap = props =>{
 
-    
+
+  /* 지도 구현을 위한 부분*/
+
     const [mapStyle, setmapStyle] = useState([
         {
             "elementType": "labels",
@@ -157,7 +159,6 @@ const SchoolMap = props =>{
             source={require('./assets/mapIcons/locspot.png')} />
         </Marker>
       </MapView>
-      
       </>
     
     );
